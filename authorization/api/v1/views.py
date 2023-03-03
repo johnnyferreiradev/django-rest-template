@@ -21,11 +21,11 @@ class PasswordViewSet(AuthorizationMixin, APIView):
         if serializer.is_valid(raise_exception=True):
             user = request.user
             if not user.check_password(
-                serializer.validated_data.get("current_password")
+                serializer.validated_data.get('current_password')
             ):
                 raise PermissionDenied()
 
-            user.set_password(serializer.validated_data.get("new_password"))
+            user.set_password(serializer.validated_data.get('new_password'))
             user.save()
             response = {
                 "status": "success",
