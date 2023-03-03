@@ -34,6 +34,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# SITE_URL = os.environ.get('SITE_URL')
+SITE_URL = 'http://127.0.0.1:8000'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -62,7 +65,7 @@ ROOT_URLCONF = 'djangoresttemplate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
